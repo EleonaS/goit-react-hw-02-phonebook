@@ -9,15 +9,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-color: bisque;
 }
-
-/*
-body {
-  font-family: 'Red Hat Text',
-    sans-serif;
-
-  background-color: white;
-}*/
 
 a {
   text-decoration: none;

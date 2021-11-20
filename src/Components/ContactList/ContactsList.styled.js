@@ -7,6 +7,8 @@ const StyledList = styled.ul`
 `;
 
 const ListItem = styled.li`
+  width: 400px;
+  justify-content: space-between;
   display: flex;
   align-items: center;
   padding-bottom: 20px;

@@ -10,6 +10,10 @@ import {
 } from './Form.styled';
 
 class ContactForm extends Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   state = {
     name: '',
     number: '',
@@ -73,11 +77,11 @@ class ContactForm extends Component {
     );
   }
 }
-ContactForm.propType = {
+
+/*ContactForm.propType = {
   name: PropTypes.string.isRequired,
   number: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
-};
+};*/
 
 export { ContactForm };

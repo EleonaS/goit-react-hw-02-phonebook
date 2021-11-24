@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import {
   StyledList,
   ListItem,
-  Button,
 } from './ContactsList.styled';
+import { ContactsListItem } from 'Components/ContactListItem/ContactListItem';
 
 const ContactsList = ({
   contacts,
@@ -12,18 +12,16 @@ const ContactsList = ({
 }) => (
   <StyledList>
     {contacts.map(
-      ({ id, name, number }) => (
+      ({ name, number, id }) => (
         <ListItem key={id}>
-          {name}: {number}
-          <Button
-            type="button"
+          <ContactsListItem
             id={id}
-            onClick={() => {
-              onDeleteContact(id);
-            }}
-          >
-            Delete
-          </Button>
+            name={name}
+            number={number}
+            onDeleteContact={
+              onDeleteContact
+            }
+          />
         </ListItem>
       ),
     )}
@@ -33,12 +31,12 @@ const ContactsList = ({
 ContactsList.propTypes = {
   contacts: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      number: PropTypes.string,
+      name: PropTypes.string.isRequired,
+      id: PropTypes.string.isRequired,
+      number:
+        PropTypes.string.isRequired,
     }),
   ),
-  //onClick: PropTypes.func.isRequired,
   onDeleteContact: PropTypes.func,
 };
 

@@ -98,7 +98,7 @@ class App extends Component {
     });
   };
 
-  handleDeleteContact = contactId => {
+  deleteContact = contactId => {
     this.setState(prevState => ({
       contacts:
         prevState.contacts.filter(
@@ -141,7 +141,7 @@ class App extends Component {
           <ContactsList
             contacts={foundContacts}
             onDeleteContact={
-              this.handleDeleteContact
+              this.deleteContact
             }
           />
         </Container>
